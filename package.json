@@ -1,0 +1,40 @@
+{
+  "name": "nircmd",
+  "version": "1.0.0",
+  "description": "Perform tasks using the nircmd.exe utility.",
+  "license": "MIT",
+  "repository": "gillstrom/nircmd",
+  "author": {
+    "email": "andreasgillstrom@gmail.com",
+    "name": "gillstrom",
+    "url": "github.com/gillstrom"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "cli.js",
+    "index.js",
+    "nircmd.exe"
+  ],
+  "keywords": [
+    "cli",
+    "cli-app",
+    "cmd",
+    "command-line",
+    "nircmd",
+    "nircmd.exe",
+    "windows",
+    "utility"
+  ],
+  "dependencies": {
+    "meow": "^3.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}
