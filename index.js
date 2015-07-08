@@ -1,5 +1,6 @@
 'use strict';
 var execFile = require('child_process').execFile;
+var path = require('path');
 
 module.exports = function (input, cb) {
 	if (process.platform !== 'win32') {
@@ -19,7 +20,7 @@ module.exports = function (input, cb) {
 		});
 	}
 
-	execFile('./nircmd.exe', input, function (err, res) {
+	execFile(path.join(__dirname, 'nircmd.exe'), input, function (err, res) {
 		if (err) {
 			cb(err);
 			return;
