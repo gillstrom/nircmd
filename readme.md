@@ -47,7 +47,7 @@ $ nircmd --help
 *Required*  
 Type: `string` or `array`
 
-Either a string with the command or an array with the command (one word per value).
+Either a string with the command or an array with the command (one argument per value).
 
 #### callback(err, res)
 
