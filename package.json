@@ -1,6 +1,6 @@
 {
   "name": "nircmd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Perform tasks using the nircmd.exe utility.",
   "license": "MIT",
   "repository": "gillstrom/nircmd",
