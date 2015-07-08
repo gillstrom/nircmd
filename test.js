@@ -13,7 +13,7 @@ test('clipboard', function (t) {
 test('screensaver', function (t) {
 	t.plan(1);
 
-	nircmd('screensaver"', function (err) {
+	nircmd('screensaver', function (err) {
 		t.assert(!err, err);
 	});
 });
