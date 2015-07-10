@@ -33,8 +33,8 @@ $ npm install --global nircmd
 $ nircmd --help
 
 	Examples
-	  $ nircmd killprocess firefox.exe'
-	  $ nircmd clipboard set github.com'
+	  $ nircmd killprocess firefox.exe
+	  $ nircmd clipboard set github.com
 ```
 
 
