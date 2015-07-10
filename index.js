@@ -1,14 +1,15 @@
 'use strict';
 var execFile = require('child_process').execFile;
 var path = require('path');
+var multiTypeof = require('multi-typeof');
 
 module.exports = function (input, cb) {
 	if (process.platform !== 'win32') {
 		throw new Error('Only Windows systems are supported');
 	}
 
-	if (!Array.isArray(input) && typeof input !== 'string') {
-		throw new TypeError('Expected a string or array as input');
+	if (!multiTypeof(input, ['string', 'array'])) {
+		throw new TypeError('Expected a string or an array as input');
 	}
 
 	if (!Array.isArray(input)) {

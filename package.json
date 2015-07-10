@@ -28,11 +28,12 @@
     "command-line",
     "nircmd",
     "nircmd.exe",
-    "windows",
-    "utility"
+    "utility",
+    "windows"
   ],
   "dependencies": {
-    "meow": "^3.3.0"
+    "meow": "^3.3.0",
+    "multi-typeof": "0.0.0"
   },
   "devDependencies": {
     "ava": "^0.0.4"
