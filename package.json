@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "meow": "^3.3.0",
-    "multi-typeof": "0.0.0"
+    "multi-typeof": "^0.1.0"
   },
   "devDependencies": {
     "ava": "^0.0.4"
