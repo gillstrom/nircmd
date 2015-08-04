@@ -40,7 +40,7 @@ $ nircmd --help
 
 ## API
 
-### nircmd(input, callback)
+### nircmd(input, [options], callback)
 
 #### input
 
@@ -48,6 +48,12 @@ $ nircmd --help
 Type: `string` or `array`
 
 Either a string with the command or an array with the command (one argument per value).
+
+#### options
+
+Type: `object`
+
+Options to be passed on to [`child_process.execFile()`](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
 
 #### callback(err, res)
 
