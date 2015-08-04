@@ -21,12 +21,19 @@ function checkInput(input) {
 	return input;
 }
 
-module.exports = function (input, cb) {
+module.exports = function (input, opts, cb) {
+	opts = opts || {};
+
 	if (process.platform !== 'win32') {
 		throw new Error('Only Windows systems are supported');
 	}
 
-	execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), function (err, res) {
+	if (typeof opts === 'function') {
+		cb = opts;
+		opts = {};
+	}
+
+	execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts, function (err, res) {
 		if (err) {
 			cb(err);
 			return;
