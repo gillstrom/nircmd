@@ -17,3 +17,13 @@ test('screensaver', function (t) {
 		t.assert(!err, err);
 	});
 });
+
+test('screensaver using spawn', function (t) {
+	t.plan(1);
+
+	var cp = nircmd.spawn('screensaver');
+
+	cp.on('exit', function (code) {
+		t.assert(code === 0);
+	});
+});

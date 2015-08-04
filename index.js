@@ -1,13 +1,10 @@
 'use strict';
 var execFile = require('child_process').execFile;
+var spawn = require('child_process').spawn;
 var path = require('path');
 var multiTypeof = require('multi-typeof');
 
-module.exports = function (input, cb) {
-	if (process.platform !== 'win32') {
-		throw new Error('Only Windows systems are supported');
-	}
-
+function checkInput(input) {
 	if (!multiTypeof(input, ['string', 'array'])) {
 		throw new TypeError('Expected a string or an array as input');
 	}
@@ -21,7 +18,15 @@ module.exports = function (input, cb) {
 		});
 	}
 
-	execFile(path.join(__dirname, 'nircmd.exe'), input, function (err, res) {
+	return input;
+}
+
+module.exports = function (input, cb) {
+	if (process.platform !== 'win32') {
+		throw new Error('Only Windows systems are supported');
+	}
+
+	execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), function (err, res) {
 		if (err) {
 			cb(err);
 			return;
@@ -29,4 +34,14 @@ module.exports = function (input, cb) {
 
 		cb(null, res);
 	});
+};
+
+module.exports.spawn = function (input, opts) {
+	opts = opts || {};
+
+	if (process.platform !== 'win32') {
+		throw new Error('Only Windows systems are supported');
+	}
+
+	return spawn(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts);
 };
