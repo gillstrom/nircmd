@@ -34,7 +34,8 @@ module.exports = function (input, opts, cb) {
 	}
 
 	execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts, function (err, res) {
-		if (err) {
+		// NirCmd exits with this weird code even though it worked
+		if (err && err.code !== 4207175) {
 			cb(err);
 			return;
 		}
