@@ -14,7 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "cli.js",
@@ -32,11 +32,17 @@
     "windows"
   ],
   "dependencies": {
-    "meow": "^3.3.0",
-    "multi-typeof": "^1.0.0"
+    "meow": "^3.4.1",
+    "multi-typeof": "^1.0.0",
+    "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.0.4",
+    "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "ignores": [
+      "test.js"
+    ]
   }
 }

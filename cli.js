@@ -16,13 +16,4 @@ if (!cli.input.length) {
 	process.exit(1);
 }
 
-nircmd(cli.input, function (err, res) {
-	if (err) {
-		console.error(err.message);
-		process.exit(1);
-	}
-
-	if (res) {
-		console.log(res);
-	}
-});
+nircmd(cli.input).then(console.log);

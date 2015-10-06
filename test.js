@@ -1,29 +1,20 @@
-'use strict';
-var test = require('ava');
-var nircmd = require('./');
+import test from 'ava';
+import fn from './';
 
-test('clipboard', function (t) {
-	t.plan(1);
-
-	nircmd('clipboard set "hey everybody"', function (err) {
-		t.assert(!err, err);
-	});
+test('clipboard', async t => {
+	await fn('clipboard set "hey everybody"');
 });
 
-test('screensaver', function (t) {
-	t.plan(1);
-
-	nircmd('screensaver', function (err) {
-		t.assert(!err, err);
-	});
+test('screensaver', async t => {
+	await fn('screensaver');
 });
 
-test('screensaver using spawn', function (t) {
+test('screensaver using spawn', t => {
 	t.plan(1);
 
-	var cp = nircmd.spawn('screensaver');
+	const cp = fn.spawn('screensaver');
 
 	cp.on('exit', function (code) {
-		t.assert(code === 0);
+		t.true(code === 0);
 	});
 });

@@ -3,6 +3,7 @@ var execFile = require('child_process').execFile;
 var spawn = require('child_process').spawn;
 var path = require('path');
 var multiTypeof = require('multi-typeof');
+var Promise = require('pinkie-promise');
 
 function checkInput(input) {
 	if (!multiTypeof(input, ['string', 'array'])) {
@@ -21,26 +22,23 @@ function checkInput(input) {
 	return input;
 }
 
-module.exports = function (input, opts, cb) {
+module.exports = function (input, opts) {
 	opts = opts || {};
 
 	if (process.platform !== 'win32') {
-		throw new Error('Only Windows systems are supported');
+		return Promise.reject(new Error('Only Windows systems are supported'));
 	}
 
-	if (typeof opts === 'function') {
-		cb = opts;
-		opts = {};
-	}
+	return new Promise(function (resolve, reject) {
+		execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts, function (err, res) {
+			// NirCmd exits with this weird code even though it worked
+			if (err && err.code !== 4207175) {
+				reject(err);
+				return;
+			}
 
-	execFile(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts, function (err, res) {
-		// NirCmd exits with this weird code even though it worked
-		if (err && err.code !== 4207175) {
-			cb(err);
-			return;
-		}
-
-		cb(null, res);
+			resolve(res);
+		});
 	});
 };
 
