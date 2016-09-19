@@ -9,7 +9,7 @@ const checkInput = input => {
 	}
 
 	if (!Array.isArray(input)) {
-		const reg = new RegExp(/[^\s"']+|"([^"]*)"|'([^']*)'/g);
+		const reg = /[^\s"']+|"([^"]*)"|'([^']*)'/g;
 
 		input = input.match(reg);
 

@@ -73,4 +73,4 @@ Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#execa
 
 ## License
 
-MIT © [Andreas Gillström](http://github.com/gillstrom)
+MIT © [Andreas Gillström](https://github.com/gillstrom)
