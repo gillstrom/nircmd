@@ -1,7 +1,6 @@
 # nircmd
 
-> Perform tasks using the nircmd.exe utility.
-
+> Perform tasks using the nircmd.exe utility
 
 *Examples and documentation can be found [here.](http://www.nirsoft.net/utils/nircmd2.html)*
 
@@ -29,6 +28,7 @@ nircmd('clipboard set "hey everybody"').then(() => {
 ```
 $ npm install --global nircmd
 ```
+
 ```
 $ nircmd --help
 
@@ -46,33 +46,31 @@ Returns a Promise that resolves *usually* nothing.
 
 #### input
 
-*Required*  
-Type: `string` or `array`
+Type: `string` `Array`
 
 Either a string with the command or an array with the command (one argument per value).
 
 #### options
 
-Type: `object`
+Type: `Object`
 
-Options to be passed on to [`child_process.execFile()`](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
+Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#execafile-arguments-options).
 
-### nircmd.spawn(input, options)
+### nircmd.spawn(input, [options])
 
 #### input
 
-*Required*  
-Type: `string` or `array`
+Type: `string` `Array`
 
 Either a string with the command or an array with the command (one argument per value).
 
 #### options
 
-Type: `object`
+Type: `Object`
 
-Options to be passed on to [`child_process.spawn()`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options).
+Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#execafile-arguments-options).
 
 
 ## License
 
-MIT © [gillstrom](http://github.com/gillstrom)
+MIT © [Andreas Gillström](http://github.com/gillstrom)

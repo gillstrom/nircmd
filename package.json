@@ -1,17 +1,17 @@
 {
   "name": "nircmd",
   "version": "2.0.0",
-  "description": "Perform tasks using the nircmd.exe utility.",
+  "description": "Perform tasks using the nircmd.exe utility",
   "license": "MIT",
   "repository": "gillstrom/nircmd",
   "author": {
+    "name": "Andreas Gillström",
     "email": "andreasgillstrom@gmail.com",
-    "name": "gillstrom",
     "url": "github.com/gillstrom"
   },
   "bin": "cli.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -32,17 +32,15 @@
     "windows"
   ],
   "dependencies": {
+    "execa": "^0.4.0",
     "meow": "^3.4.1",
-    "multi-typeof": "^1.0.0",
-    "pinkie-promise": "^1.0.0"
+    "multi-typeof": "^1.0.0"
   },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
   },
   "xo": {
-    "ignores": [
-      "test.js"
-    ]
+    "esnext": true
   }
 }

@@ -1,20 +1,18 @@
 import test from 'ava';
-import fn from './';
+import m from './';
 
-test('clipboard', async t => {
-	await fn('clipboard set "hey everybody"');
+test('clipboard', async () => {
+	await m('clipboard set "hey everybody"');
 });
 
-test('screensaver', async t => {
-	await fn('screensaver');
+test('screensaver', async () => {
+	await m('screensaver');
 });
 
 test('screensaver using spawn', t => {
-	t.plan(1);
+	const cp = m.spawn('screensaver');
 
-	const cp = fn.spawn('screensaver');
-
-	cp.on('exit', function (code) {
+	cp.on('exit', code => {
 		t.true(code === 0);
 	});
 });
