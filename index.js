@@ -26,7 +26,7 @@ module.exports = (input, opts) => {
 		return Promise.reject(new Error('Only Windows systems are supported'));
 	}
 
-	return execa(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts).catch(err => {
+	return execa.stdout(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts).catch(err => {
 		if (err && err.code !== 4207175) {
 			throw err;
 		}
