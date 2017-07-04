@@ -1,46 +1,43 @@
 {
-  "name": "nircmd",
-  "version": "2.0.0",
-  "description": "Perform tasks using the nircmd.exe utility",
-  "license": "MIT",
-  "repository": "gillstrom/nircmd",
-  "author": {
-    "name": "Andreas Gillström",
-    "email": "andreasgillstrom@gmail.com",
-    "url": "github.com/gillstrom"
-  },
-  "bin": "cli.js",
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "cli.js",
-    "index.js",
-    "nircmd.exe"
-  ],
-  "keywords": [
-    "cli",
-    "cli-app",
-    "cmd",
-    "command-line",
-    "nircmd",
-    "nircmd.exe",
-    "utility",
-    "windows"
-  ],
-  "dependencies": {
-    "execa": "^0.4.0",
-    "meow": "^3.4.1",
-    "multi-typeof": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "nircmd",
+	"version": "2.0.0",
+	"description": "Perform tasks using the nircmd.exe utility",
+	"license": "MIT",
+	"repository": "gillstrom/nircmd",
+	"author": {
+		"name": "Andreas Gillström",
+		"email": "andreasgillstrom@gmail.com",
+		"url": "github.com/gillstrom"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"cli.js",
+		"index.js",
+		"nircmd.exe"
+	],
+	"keywords": [
+		"cli",
+		"cli-app",
+		"cmd",
+		"command-line",
+		"nircmd",
+		"nircmd.exe",
+		"utility",
+		"windows"
+	],
+	"dependencies": {
+		"execa": "^0.7.0",
+		"meow": "^3.4.1",
+		"multi-typeof": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

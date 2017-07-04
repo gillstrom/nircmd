@@ -1,5 +1,5 @@
 import test from 'ava';
-import m from './';
+import m from '.';
 
 test('clipboard', async () => {
 	await m('clipboard set "hey everybody"');

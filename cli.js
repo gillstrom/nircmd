@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 const meow = require('meow');
-const nircmd = require('./');
+const nircmd = require('.');
 
 const cli = meow(`
-	Examples
+	Example
 	  $ nircmd killprocess firefox.exe
 	  $ nircmd clipboard set github.com'
 `);

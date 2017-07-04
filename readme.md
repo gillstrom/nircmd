@@ -8,7 +8,7 @@
 ## Install
 
 ```
-$ npm install --save nircmd
+$ npm install nircmd
 ```
 
 
@@ -42,7 +42,7 @@ $ nircmd --help
 
 ### nircmd(input, [options])
 
-Returns a Promise that resolves *usually* nothing.
+Returns a `Promise` that resolves *usually* nothing.
 
 #### input
 
@@ -54,21 +54,7 @@ Either a string with the command or an array with the command (one argument per 
 
 Type: `Object`
 
-Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#execafile-arguments-options).
-
-### nircmd.spawn(input, [options])
-
-#### input
-
-Type: `string` `Array`
-
-Either a string with the command or an array with the command (one argument per value).
-
-#### options
-
-Type: `Object`
-
-Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#execafile-arguments-options).
+Options to be passed on to [`execa`](https://github.com/sindresorhus/execa#options).
 
 
 ## License

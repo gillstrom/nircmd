@@ -5,7 +5,7 @@ const multiTypeof = require('multi-typeof');
 
 const checkInput = input => {
 	if (!multiTypeof(input, ['string', 'array'])) {
-		throw new TypeError('Expected a string or an array as input');
+		return Promise.reject(new TypeError(`Expected a \`string\` or an \`Array\`, got \`${typeof input}\``));
 	}
 
 	if (!Array.isArray(input)) {
@@ -31,12 +31,4 @@ module.exports = (input, opts) => {
 			throw err;
 		}
 	});
-};
-
-module.exports.spawn = (input, opts) => {
-	if (process.platform !== 'win32') {
-		throw new Error('Only Windows systems are supported');
-	}
-
-	return execa.spawn(path.join(__dirname, 'nircmd.exe'), checkInput(input), opts);
 };
